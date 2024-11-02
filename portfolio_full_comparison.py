@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-# Import the results from all algorithms
+# Importerer resultater fra all algoritmer
 from portfolio_optimization_ep import (
     best_portfolio_return as ep_return,
     best_portfolio_risk as ep_risk,
@@ -43,7 +43,7 @@ from es_offspring_selection import (
     fitness_history_es as mu_lambda_fitness_history
 )
 
-# Print comparison of results for all algorithms
+# Printer sammenligning av resultat av alle algoritmer
 print("Comparison of Portfolio Performance Across All Algorithms:\n")
 
 print("1. Evolutionary Programming (EP):")
@@ -76,7 +76,7 @@ print(f"Best Portfolio Expected Return: {mu_lambda_return}")
 print(f"Best Portfolio Risk (Variance): {mu_lambda_risk}")
 print(f"Best Portfolio Volatility (Standard Deviation): {mu_lambda_volatility}\n")
 
-# Plot fitness histories for all algorithms
+# Plot fitness historikk for alle algoritmer
 plt.plot(ep_fitness_history, label='EP Fitness')
 plt.plot(es_fitness_history, label='ES Fitness')
 plt.plot(advanced_ep_fitness_history, label='Advanced EP Fitness')

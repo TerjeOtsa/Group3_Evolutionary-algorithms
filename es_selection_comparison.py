@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-# Import the results from (μ + λ) and (μ, λ) ES algorithms
+# Importerer resultater fra begge ES algoritmer
 from es_combined_selection import (
     best_portfolio_return_es as mu_plus_lambda_return,
     best_portfolio_risk_es as mu_plus_lambda_risk,
@@ -15,7 +15,7 @@ from es_offspring_selection import (
     fitness_history_es as mu_lambda_fitness_history
 )
 
-# Plot fitness histories for both algorithms
+# Plot fitness for begge algoritmer
 plt.plot(mu_plus_lambda_fitness_history, label='(μ + λ) ES Fitness')
 plt.plot(mu_lambda_fitness_history, label='(μ, λ) ES Fitness')
 plt.xlabel('Generation')
@@ -24,7 +24,7 @@ plt.title('Comparison of (μ + λ) and (μ, λ) ES Fitness Over Generations')
 plt.legend()
 plt.show()
 
-# Print the portfolio performance comparison
+# Printer ut portfolio ytelse sammenligning
 print("Comparison of Best Portfolio Metrics:")
 
 print("\n(μ + λ) ES Results:")

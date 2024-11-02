@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-# Import the results from both advanced EP and ES algorithms
+# Importere resultater fra både advanced EP og ES algoritmer
 from portfolio_optimization_advanced_ep import (
     best_portfolio_return as best_portfolio_return_ep,
     best_portfolio_risk as best_portfolio_risk_ep,
@@ -15,7 +15,7 @@ from portfolio_optimization_advanced_es import (
     fitness_history_es
 )
 
-# Plot fitness histories for both algorithms
+# Plot fitness historikk for begge algoritmer
 plt.plot(fitness_history_ep, label='Advanced EP Fitness')
 plt.plot(fitness_history_es, label='Advanced ES Fitness')
 plt.xlabel('Generation')
@@ -24,7 +24,7 @@ plt.title('Comparison of Advanced EP and Advanced ES Fitness Over Generations')
 plt.legend()
 plt.show()
 
-# Print the portfolio performance comparison
+# Printer ut portfolio ytelses sammenligning
 print("Comparison of Best Portfolio Metrics:")
 
 print("\nAdvanced EP Results:")
