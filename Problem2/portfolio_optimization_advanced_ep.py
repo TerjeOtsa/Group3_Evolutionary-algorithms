@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-data_folder = './'  
+data_folder = 'Problem2/'  
 
 monthly_returns_df = pd.read_csv(data_folder + 'Monthly_Returns_Data.csv', index_col=0)
 covariance_matrix = pd.read_csv(data_folder + 'Covariance_Matrix.csv', index_col=0)
