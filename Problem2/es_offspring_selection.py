@@ -2,6 +2,11 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+data_folder = 'Problem2/'  
+
+monthly_returns_df = pd.read_csv(data_folder + 'Monthly_Returns_Data.csv', index_col=0)
+covariance_matrix = pd.read_csv(data_folder + 'Covariance_Matrix.csv', index_col=0)
+
 # Portfolio evaluerings funksjoner
 def portfolio_return(weights, returns):
     return np.dot(weights, returns.mean())
@@ -80,11 +85,6 @@ offspring_size = 300
 num_generations = 500  
 mutation_rate = 0.05  
 
-
-data_folder = 'Problem2/'  
-
-monthly_returns_df = pd.read_csv(data_folder + 'Monthly_Returns_Data.csv', index_col=0)
-covariance_matrix = pd.read_csv(data_folder + 'Covariance_Matrix.csv', index_col=0)
 
 # Kjører(μ, λ) Evolutionary Strategies
 best_portfolio_es, fitness_history_es = offspring_selection_es(
