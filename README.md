@@ -1,3 +1,26 @@
+Libraries needed to run code: 
+
+TASK 1: 
+
+pandas
+numpy 
+seaborn
+deap
+re
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+import pickle
+
+
+
+
+TASK 1: 
+
+ALL li
+
+
+
+
+
 Comparative Analysis of Evolutionary Programming and Evolutionary Strategies for Portfolio Optimization:
 
 This project contains Python scripts that implement different evolutionary algorithms, including Evolutionary Programming (EP) and Evolutionary Strategies (ES), to optimize a stock portfolio based on historical stock data. The results from both algorithms are compared to identify the best-performing portfolio in terms of expected return, risk, and volatility.
