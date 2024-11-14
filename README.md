@@ -93,6 +93,8 @@ This script will:
 Print the expected return, risk, and volatility of the portfolios optimized by the diffrent algorithms.
 Plot the evolution of fitness (expected return) for all algorithms over the generations, allowing a visual comparison of how each algorithm performed.
 
+ To compares the performance of the evolutionary algorithms in terms of convergence speed and stability based on their fitness histories
+run the convergence_speed_stability.py script
 
 
 Interpreting Results:
