@@ -1,21 +1,87 @@
-Libraries needed to run code: 
+### Required Libraries
 
-TASK 1: 
+To run this project, you’ll need the following Python libraries:
 
-pandas
-numpy 
-seaborn
-deap
-re
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
-import pickle
+- **pandas**: For data manipulation and analysis.
+- **numpy**: For numerical operations and handling arrays.
+- **seaborn**: For data visualization and plotting.
+- **deap**: A library for implementing evolutionary algorithms.
+- **re**: Regular expressions, used for string manipulation.
+- **scikit-learn**: For data preprocessing, including `MinMaxScaler` and `StandardScaler`.
+- **pickle**: For object serialization and deserialization.
+- **gym**: Part of OpenAI Gym, a toolkit for developing and comparing reinforcement learning algorithms. Provides various standard environments (such as `Taxi-v3` and `CartPole-v1`) for testing and training reinforcement learning models. 
+
+### Installation
+
+You can install these libraries using `pip`. Run the following command in your terminal:
+
+```bash
+pip install pandas numpy seaborn deap scikit-learn gym
+```
+
+The re and pickle libraries are built into Python, so no additional installation is needed for these.
 
 
+## TASK 1:
+# Traffic Management Optimization Using Multi-Objective Evolutionary Algorithms
 
+This project optimizes traffic management using a Multi-Objective Evolutionary Algorithm (MOEA). The codebase is organized into five main files:
 
-TASK 1: 
+- **data_exploration.ipynb**: For data analysis and visualization.
+- **dataset_manager.ipynb**: For preparing and processing datasets.
+- **MOEA.ipynb**: For implementing the MOEA algorithm.
+- **fuel_model.py**: For calculating fuel consumption based on traffic data.
+- **segment_model.py**: For managing road segment data.
 
-ALL li
+---
+
+## Dataset Management
+
+The **dataset_manager.ipynb** file formats raw data into smaller, more manageable subsets required for data exploration and the MOEA algorithm. However, running this file is **not necessary** since processed data is already stored as `.pickle` files in the `/datasets` folder.
+
+### Datasets
+- **Volume Data**: Located in `/datasets/VOL`.
+- **Speed Data**: Not included in the repository due to its large size but can be fetched from:
+  [NYC Traffic Speeds Dataset](https://data.cityofnewyork.us/Transportation/DOT-Traffic-Speeds-NBE/i4gi-tjb9/about_data).  
+  The speed data has been queried for the last 3 years, but only the most recent year is used for simplicity.
+
+### Running dataset_manager.ipynb
+1. Place the speed dataset in the `/datasets/SPEED` folder.
+2. Ensure the file paths and naming conventions match those used in the notebook.
+3. Open the notebook and run all cells from the top using the built-in "Run All" feature or execute individual cells as needed.
+
+---
+
+## Running the Notebooks
+
+### data_exploration.ipynb
+- Purpose: Visualize and analyze the dataset.
+- How to Run: Open the notebook and run all cells from the top or selectively execute cells.
+
+### MOEA.ipynb
+- Purpose: Run the Multi-Objective Evolutionary Algorithm.
+- How to Run: Open the notebook and run all cells from the top or selectively execute cells.
+- Configurations: If wanted the configurations parameters can be adjusted near the bottom of the file in a grid, under the "MOEA CONFIGURATIONS AND RESULTS" cell.
+
+### Why Use Notebooks?
+We chose notebooks for these tasks because they allow:
+- Incremental execution of code cells, which is ideal for testing small changes.
+- Time-efficient development by focusing on specific parts of the workflow.
+- Immediate preview of images, tables, and print outputs beneath each cell.
+
+---
+
+## Supporting Python Files
+
+- **fuel_model.py**: Contains functions for calculating fuel consumption per hour and per segment. These functions are imported as needed by the notebooks.
+- **segment_model.py**: Manages segment-specific data, allowing for adjustments if required. It is also imported by the notebooks as needed.
+
+> Note: These Python files do not need to be run independently but can be edited to customize calculations or segment details. A screenshot of the fuel calculations table is included for reference under the Fuel calculations table folder as a png.
+
+---
+
+With this structure, the project balances efficiency, modularity, and scalability, enabling easy exploration, adjustments, and optimization for traffic management solutions.
+
 
 
 
@@ -48,13 +114,7 @@ es_selection_comparison.py: Compares the (μ + λ) ES and (μ, λ) ES versions i
 Setup Instructions:
 
 Prerequisites
-Before running any of the scripts, ensure you have Python installed, along with the following packages:
-numpy
-pandas
-matplotlib
-
-You can install the dependencies with the following command:
-pip install numpy pandas matplotlib
+Before running any of the scripts, ensure you have Python installed, along with the following packages at the top (Required Libraries):
 
 Data Requirements:
 The scripts expect historical stock data and the covariance matrix to be present as CSV files in a folder. Ensure the following files are located in the specified directory:
@@ -129,9 +189,9 @@ The goal of the Q-learning agent is to maximize cumulative rewards by learning t
 This part of the project consists of two Python scripts that implement a Q-learning agent for OpenAI's Taxi-v3 environment. The agent is trained to navigate a grid, pick up a passenger, and deliver them to the correct destination. The train_agent.py script trains the agent, and the run_trained_agent.py script demonstrates the agent's performance after training.
 
 Dependencies
-Before running these scripts, ensure you have the following dependencies installed:
+Before running these scripts, ensure you have the Python 3.x installed and the following packages at the top (Required Libraries):
 
-Python 3.x
+
 gym (part of OpenAI Gym, installable via pip install gym)
 numpy
 matplotlib
