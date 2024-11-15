@@ -83,95 +83,135 @@ We chose notebooks for these tasks because they allow:
 With this structure, the project balances efficiency, modularity, and scalability, enabling easy exploration, adjustments, and optimization for traffic management solutions.
 
 
+# Task 2: Comparative Analysis of Evolutionary Algorithms for Portfolio Optimization
 
+This project contains Python scripts that implement different evolutionary algorithms to optimize a stock portfolio based on historical stock data. The results from all algorithms are compared to identify the best-performing portfolio in terms of expected return, risk, and volatility.
 
+## Files Overview
 
+- **`portfolio_optimization_ep.py`**: Implements the Evolutionary Programming (EP) algorithm to optimize a portfolio of stocks.
+- **`portfolio_optimization_es.py`**: Implements the Evolutionary Strategies (ES) algorithm to optimize a portfolio of stocks.
+- **`portfolio_optimization_advanced_ep.py`**: Implements an advanced version of the EP algorithm with self-adaptive mutation strategies.
+- **`portfolio_optimization_advanced_es.py`**: Implements an advanced version of the ES algorithm with self-adaptive mutation rates and recombination.
+- **`es_combined_selection.py`**: Implements the (μ + λ) version of the ES algorithm, where the next generation is selected from both parent and offspring populations.
+- **`es_offspring_selection.py`**: Implements the (μ, λ) version of the ES algorithm, where the next generation is selected only from offspring, introducing greater selection pressure.
+- **`convergence_speed_stability.py`**: Compares convergence speed and stability across the algorithms.
+- **`portfolio_full_comparison.py`**: Compares the fitness across all the algorithms.
 
-Comparative Analysis of Evolutionary Programming and Evolutionary Strategies for Portfolio Optimization:
+---
 
-This project contains Python scripts that implement different evolutionary algorithms, including Evolutionary Programming (EP) and Evolutionary Strategies (ES), to optimize a stock portfolio based on historical stock data. The results from both algorithms are compared to identify the best-performing portfolio in terms of expected return, risk, and volatility.
+## Setup Instructions
 
-Files Overview:
+### Prerequisites
+Before running any of the scripts, ensure you have Python installed, along with the following packages:
 
-portfolio_optimization_ep.py: Implements the Evolutionary Programming (EP) algorithm to optimize a portfolio of stocks.
+- **Required Libraries**: Listed at the top of each script.
 
-portfolio_optimization_es.py: Implements the Evolutionary Strategies (ES) algorithm to optimize a portfolio of stocks.
-
-portfolio_optimization_advanced_ep.py: Implements an advanced version of the EP algorithm with self-adaptive mutation strategies.
-
-portfolio_optimization_advanced_es.py: Implements an advanced version of the ES algorithm with self-adaptive mutation rates and recombination.
-
-es_combined_selection.py: Implements the (μ + λ) version of the ES algorithm, where the next generation is selected from both parent and offspring populations.
-
-es_offspring_selection.py: Implements the (μ, λ) version of the ES algorithm, where the next generation is selected only from offspring, introducing greater selection pressure.
-
-portfolio_comparison.py: Compares the performance of the portfolios optimized by both EP and ES in terms of expected return, risk, and volatility.
-
-portfolio_comparison_advanced.py: Compares the advanced versions of EP and ES.
-
-es_selection_comparison.py: Compares the (μ + λ) ES and (μ, λ) ES versions in terms of portfolio performance.
-
-Setup Instructions:
-
-Prerequisites
-Before running any of the scripts, ensure you have Python installed, along with the following packages at the top (Required Libraries):
-
-Data Requirements:
+### Data Requirements
 The scripts expect historical stock data and the covariance matrix to be present as CSV files in a folder. Ensure the following files are located in the specified directory:
-Monthly Returns Data: Monthly_Returns_Data.csv
-Covariance Matrix: Covariance_Matrix.csv
 
-Make sure the file paths in each script match the location of your data files. You can update the data_folder variable in the scripts if necessary.
+- **Monthly Returns Data**: `Monthly_Returns_Data.csv`
+- **Covariance Matrix**: `Covariance_Matrix.csv`
+
+Make sure the file paths in each script match the location of your data files. You can update the `data_folder` variable in the scripts if necessary:
+
+```python
 data_folder = '/path/to/your/data/'
+```
 
-How to Run the Scripts:
+---
 
-Running Evolutionary Programming (EP)
-To run the Evolutionary Programming (EP) algorithm for portfolio optimization, execute the portfolio_optimization_ep.py script: python portfolio_optimization_ep.py
+## How to Run the Scripts
+
+### Running Evolutionary Programming (EP)
+To run the Evolutionary Programming (EP) algorithm for portfolio optimization, execute the `portfolio_optimization_ep.py` script:
+
+```bash
+python portfolio_optimization_ep.py
+```
+
 The script will:
-Load the stock data.
-Run the EP algorithm over multiple generations.
-Print the best portfolio's expected return, risk (variance), and volatility (standard deviation).
-Plot the fitness evolution (best portfolio return) over the generations.
+1. Load the stock data.
+2. Run the EP algorithm over multiple generations.
+3. Print the best portfolio's expected return, risk (variance), and volatility (standard deviation).
+4. Plot the fitness evolution (best portfolio return) over the generations.
 
+### Running Evolutionary Strategies (ES)
+To run the Evolutionary Strategies (ES) algorithm for portfolio optimization, execute the `portfolio_optimization_es.py` script:
 
-Running Evolutionary Strategies (ES)
-To run the Evolutionary Strategies (ES) algorithm for portfolio optimization, execute the portfolio_optimization_es.py 
-script: python portfolio_optimization_es.py
+```bash
+python portfolio_optimization_es.py
+```
+
 This script works similarly to the EP script but uses the ES algorithm for optimization. It also prints and plots the results.
 
-Running Advanced EP and ES
+### Running Advanced EP and ES
 For more complex portfolio optimization, run the advanced versions:
-Scripts:
-portfolio_optimization_advanced_ep.py for Advanced EP.
-portfolio_optimization_advanced_es.py for Advanced ES.
+
+- **Scripts**:
+  - `portfolio_optimization_advanced_ep.py` for Advanced EP.
+  - `portfolio_optimization_advanced_es.py` for Advanced ES.
+
 These versions include self-adaptive mutation strategies and advanced selection mechanisms.
 
-Comparing the diffrent EP and ES versions
-To compare the performance of the portfolios generated by the EP and ES algorithms, run the portfolio_full_comparison.py script
+### Running Combined and Offspring Selection (ES)
+To run the Evolutionary Strategies (ES) algorithms for portfolio optimization, execute the following scripts:
+
+```bash
+python es_combined_selection.py
+python es_offspring_selection.py
+```
+
+### Comparing the Different EP and ES Versions
+To compare the performance of the portfolios generated by the EP and ES algorithms, run the `portfolio_full_comparison.py` script:
+
+```bash
+python portfolio_full_comparison.py
+```
+
 This script will:
-Print the expected return, risk, and volatility of the portfolios optimized by the diffrent algorithms.
-Plot the evolution of fitness (expected return) for all algorithms over the generations, allowing a visual comparison of how each algorithm performed.
+1. Print the expected return, risk, and volatility of the portfolios optimized by the different algorithms.
+2. Plot the evolution of fitness (expected return) for all algorithms over the generations, allowing a visual comparison of how each algorithm performed.
 
- To compares the performance of the evolutionary algorithms in terms of convergence speed and stability based on their fitness histories
-run the convergence_speed_stability.py script
+### Comparing Convergence Speed and Stability
+To compare the performance of the evolutionary algorithms in terms of convergence speed and stability based on their fitness histories, run the `convergence_speed_stability.py` script:
 
+```bash
+python convergence_speed_stability.py
+```
 
-Interpreting Results:
-Expected Return: The higher, the better. It shows the average return of the portfolio over time.
-Risk (Variance): The lower, the better. It indicates how much the portfolio's return can vary.
-Volatility (Standard Deviation): The lower, the better. It represents the risk or uncertainty in the portfolio's return.
-The comparison between EP and ES, and between different versions of ES, will help determine which algorithm performs better in balancing risk and return.
+---
 
-Customizing Parameters
+## Interpreting Results
+
+- **Expected Return**: The higher, the better. It shows the average return of the portfolio over time.
+- **Risk (Variance)**: The lower, the better. It indicates how much the portfolio's return can vary.
+- **Volatility (Standard Deviation)**: The lower, the better. It represents the risk or uncertainty in the portfolio's return.
+
+The comparison between the diffrent versions of the evolotionary algorithms will help determine which algorithm performs better in balancing risk and return.
+
+---
+
+## Customizing Parameters
+
 You can adjust the following parameters in both the EP and ES scripts:
 
-Population Size: The number of portfolios in each generation.
-Number of Generations: The number of iterations the algorithm will run.
-Mutation Rate: The probability and magnitude of mutations during the algorithm.
+- **Population Size**: The number of portfolios in each generation.
+- **Number of Generations**: The number of iterations the algorithm will run.
+- **Mutation Rate**: The probability and magnitude of mutations during the algorithm.
+
+Example:
+
+```python
 population_size = 100  # Number of portfolios in the population
 num_generations = 500  # Number of generations to run the algorithm
 mutation_rate = 0.01   # Probability of mutation
+```
+
+
+
+
+
 
 
 
