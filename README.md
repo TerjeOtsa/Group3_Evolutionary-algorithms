@@ -177,30 +177,20 @@ mutation_rate = 0.01   # Probability of mutation
 
 
 Task 4: Taxi-v3 Environment
-Task Overview
-The Taxi-v3 environment is a grid-based simulation where a taxi agent must:
-
-Navigate to a passenger’s location.
-Pick up the passenger.
-Drop off the passenger at the destination.
-The goal of the Q-learning agent is to maximize cumulative rewards by learning the best actions for each state in the environment. Once trained, the model (Q-table) is saved for future use, allowing the agent’s performance to be tested and evaluated.
-
-This part of the project includes two Python scripts that implement a Q-learning agent for OpenAI's Taxi-v3 environment:
-
+Overview
 Task_4.py: Trains the Q-learning agent.
 run_trained_agent.py: Demonstrates the trained agent's performance.
-Additionally, Sarsa_compare.py compares the Q-learning (off-policy) agent with a SARSA (on-policy) agent, highlighting the differences in performance.
+Sarsa_compare.py: Compares the Q-learning (off-policy) agent with a SARSA (on-policy) agent, highlighting the differences in performance.
 
 Dependencies
 Ensure you have Python 3.x installed, along with the following packages:
-
 gym (part of OpenAI Gym, installable via pip install gym)
 numpy
 matplotlib
 seaborn
-Training the Agent and evaluating (Task_4.py:)
-This script trains a Q-learning agent on the Taxi-v3 environment.
 
+Training the Agent and Evaluating (Task_4.py)
+This script trains a Q-learning agent on the Taxi-v3 environment.
 Parameters
 Learning Rate (alpha): Controls how much the agent updates the Q-values for each state-action pair. Set to 0.1.
 Discount Factor (gamma): Determines the importance of future rewards. Set to 0.8.
@@ -214,10 +204,9 @@ Total Rewards Over Time: Shows the accumulation of total rewards across episodes
 Average Reward Every 10 Episodes: Tracks average performance over each 10-episode interval.
 Epsilon Decay Over Time: Visualizes the decay of the exploration rate throughout training.
 Histogram of Total Rewards (Post-Training Evaluation): Displays the distribution of rewards per episode after training.
+
 Testing the Trained Agent (Task_4_run_trained_model.py)
 This script loads the trained Q-table from trained_q_table.npy and runs the agent in the Taxi-v3 environment to demonstrate its learned behavior.
 
 Comparing Q-Learning and SARSA (Sarsa_compare.py)
 The Sarsa_compare.py script runs a comparison between the Q-learning agent (off-policy) and a SARSA agent (on-policy). This allows for analysis of the differences in learning approaches and performance outcomes between these two reinforcement learning algorithms.
-
-This formatted version provides a structured and clear overview of the scripts, dependencies, parameters, and outputs involved in Task 4.
