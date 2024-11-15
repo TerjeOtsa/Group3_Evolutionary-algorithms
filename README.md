@@ -74,7 +74,7 @@ We chose notebooks for these tasks because they allow:
 ## Supporting Python Files
 
 - **fuel_model.py**: Contains functions for calculating fuel consumption per hour and per segment. These functions are imported as needed by the notebooks.
-- **segment_model.py**: Manages segment-specific data, allowing for adjustments if required. It is also imported by the notebooks as needed.
+- **segment_model.py**: Manages segment-specific data, allowing for adjustments if required. It is also imported by the notebooks as needed. Spesific distances for the google maps calculations, they can be seen in datasets/QUERIES folder
 
 > Note: These Python files do not need to be run independently but can be edited to customize calculations or segment details. A screenshot of the fuel calculations table is included for reference under the Fuel calculations table folder as a png.
 
